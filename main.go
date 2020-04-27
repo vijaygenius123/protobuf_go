@@ -21,4 +21,15 @@ func main(){
 	}
 
 	fmt.Println(data)
+
+	newVijay := &Person{}
+
+	err  = proto.Unmarshal(data, newVijay)
+
+	if err != nil{
+		log.Fatal("Unmarshal error : ", err)
+	}
+
+	fmt.Println(newVijay.GetName())
+	fmt.Println(newVijay.GetAge())
 }
